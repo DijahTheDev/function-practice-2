@@ -96,12 +96,20 @@ console.assert(greet("Iron Man") === "Hello, Iron Man!")
 // // strings. For example:
 // // words: "quick", "fox", "fence"
 // // sentence: "quick brown fox jumps over the fence"
-function madlib(quick, fox, jumps over, fence){
-	return "quick" + "fox" + "jumps" + "fence" 
+function madlib(quick, fox, jumps, fence) {
+  return (
+    "The " + quick + " brown " + fox + " " + jumps + " over the " + fence + "."
+  )
 }
 
-	console.assert(madlib("quick","fox","jumps","fence")=== "The quick brown fox jumps over the fence.")
-	console.assert(madlib("fat","rabbit","hops","wall")=== "The fat brown rabbit hops over the wall.")
+console.assert(
+  madlib("quick", "fox", "jumps", "fence") ===
+    "The quick brown fox jumps over the fence."
+)
+console.assert(
+  madlib("fat", "rabbit", "hops", "wall") ===
+    "The fat brown rabbit hops over the wall."
+)
 
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
