@@ -40,18 +40,30 @@ console.assert(maxOfThree(-12, 4, -5) === 4)
 // vowel, false otherwise.
 // ---------------------
 function isVowel(char) {
-  if (char == "A" || char == "e" || char == "i" || char == "o" || char == "u") {
-    return true
+  if (char === 'a' ||
+      char === 'e' ||
+      char === 'i' ||
+      char === 'o' ||
+      char === 'u' ||
+      char === 'A' ||
+      char === 'E' ||
+      char === 'I' ||
+      char === 'O' ||
+      char === 'U')
+​
+  {
+      return true;
   } else {
-    return false
+      return false;
   }
+​
 }
-
-console.assert(isVowel(0) === false)
-console.assert(isVowel("B") === false)
-console.assert(isVowel("b") === false)
-console.assert(isVowel("a") === true)
-console.assert(isVowel("E") === true)
+​
+console.assert(isVowel(0) === false);
+console.assert(isVowel("B") === false);
+console.assert(isVowel("b") === false);
+console.assert(isVowel("a") === true);
+console.assert(isVowel("E") === true);
 console.assert(isVowel("2") === false)
 
 // ---------------------
@@ -61,7 +73,21 @@ console.assert(isVowel("2") === false)
 // For example, translate("this is fun") should return
 // the string "tothohisos isos fofunon".
 // ---------------------
-
+function rovarspraket(word) { ​  ​
+      if (typeof word !== 'string') {
+          return word + ''
+      }
+      for (let i = 0; i < word.length; i++) {
+          if (isVowel(word[i])) {​
+              newWord = newWord + word[i] ​
+          }
+          else {
+              newWord += word[i] + 'o' + word[i];
+          }
+      }
+      return newWord;
+  }
+  ​  
 console.assert(rovarspraket("a") === "a")
 console.assert(rovarspraket("b") === "bob")
 console.assert(rovarspraket("cat") === "cocatot")
@@ -73,6 +99,15 @@ console.assert(rovarspraket(0) === "0")
 // of a string. For example, reverse("jag testar") should
 // return the string "ratset gaj".
 // ---------------------
+function reverse(str) {
+  var text = ""
+
+  for (var i = str.length - 1; i >= 0; i--) {
+    text += str[i]
+    continue
+  }
+  return text.toLowerCase()
+}
 
 console.assert(reverse("books") === "skoob")
 console.assert(
